@@ -1,0 +1,318 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB80AC24A974E33D6",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../TFG.gen/sources_1/bd/Procesador_1_0",
+      "name": "Procesador_1_0",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "UC_0": "",
+      "UPG_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "Procesador_1_0_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "rs1_addr_o": {
+        "direction": "O",
+        "left": "4",
+        "right": "0"
+      }
+    },
+    "components": {
+      "UC_0": {
+        "vlnv": "xilinx.com:module_ref:UC:1.0",
+        "ip_revision": "1",
+        "xci_name": "Procesador_1_0_UC_0_0",
+        "xci_path": "ip\\Procesador_1_0_UC_0_0\\Procesador_1_0_UC_0_0.xci",
+        "inst_hier_path": "UC_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Procesador_1_0_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "zero_i": {
+            "direction": "I"
+          },
+          "lt_i": {
+            "direction": "I"
+          },
+          "ltu_i": {
+            "direction": "I"
+          },
+          "rs1_addr_o": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2_addr_o": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rd_addr_o": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "imm_ext_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "resultSrc": {
+            "direction": "O"
+          },
+          "MemWrite": {
+            "direction": "O"
+          },
+          "ALUControl": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "ALUSrc": {
+            "direction": "O"
+          },
+          "RegWrite": {
+            "direction": "O"
+          }
+        }
+      },
+      "UPG_0": {
+        "vlnv": "xilinx.com:module_ref:UPG:1.0",
+        "ip_revision": "1",
+        "xci_name": "Procesador_1_0_UPG_0_0",
+        "xci_path": "ip\\Procesador_1_0_UPG_0_0\\Procesador_1_0_UPG_0_0.xci",
+        "inst_hier_path": "UPG_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UPG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Procesador_1_0_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "rs1_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rd_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "imm_ext_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALUControl": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "resultSrc": {
+            "direction": "I"
+          },
+          "MemWrite": {
+            "direction": "I"
+          },
+          "ALUSrc": {
+            "direction": "I"
+          },
+          "RegWrite": {
+            "direction": "I"
+          },
+          "zero_o": {
+            "direction": "O"
+          },
+          "lt_o": {
+            "direction": "O"
+          },
+          "ltu_o": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "UC_0_ALUControl": {
+        "ports": [
+          "UC_0/ALUControl",
+          "UPG_0/ALUControl"
+        ]
+      },
+      "UC_0_ALUSrc": {
+        "ports": [
+          "UC_0/ALUSrc",
+          "UPG_0/ALUSrc"
+        ]
+      },
+      "UC_0_MemWrite": {
+        "ports": [
+          "UC_0/MemWrite",
+          "UPG_0/MemWrite"
+        ]
+      },
+      "UC_0_RegWrite": {
+        "ports": [
+          "UC_0/RegWrite",
+          "UPG_0/RegWrite"
+        ]
+      },
+      "UC_0_imm_ext_o": {
+        "ports": [
+          "UC_0/imm_ext_o",
+          "UPG_0/imm_ext_i"
+        ]
+      },
+      "UC_0_rd_addr_o": {
+        "ports": [
+          "UC_0/rd_addr_o",
+          "UPG_0/rd_addr_i"
+        ]
+      },
+      "UC_0_resultSrc": {
+        "ports": [
+          "UC_0/resultSrc",
+          "UPG_0/resultSrc"
+        ]
+      },
+      "UC_0_rs1_addr_o": {
+        "ports": [
+          "UC_0/rs1_addr_o",
+          "rs1_addr_o",
+          "UPG_0/rs1_addr_i"
+        ]
+      },
+      "UC_0_rs2_addr_o": {
+        "ports": [
+          "UC_0/rs2_addr_o",
+          "UPG_0/rs2_addr_i"
+        ]
+      },
+      "UPG_0_lt_o": {
+        "ports": [
+          "UPG_0/lt_o",
+          "UC_0/lt_i"
+        ]
+      },
+      "UPG_0_ltu_o": {
+        "ports": [
+          "UPG_0/ltu_o",
+          "UC_0/ltu_i"
+        ]
+      },
+      "UPG_0_zero_o": {
+        "ports": [
+          "UPG_0/zero_o",
+          "UC_0/zero_i"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "UC_0/clk",
+          "UPG_0/clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "UC_0/rst",
+          "UPG_0/rst"
+        ]
+      }
+    }
+  }
+}
