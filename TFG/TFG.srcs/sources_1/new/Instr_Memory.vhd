@@ -12,21 +12,7 @@ entity rom_instrucciones_2 is
 end rom_instrucciones_2;
 
 architecture Behavioral of rom_instrucciones_2 is
-  -- bit_count = 0
-  -- pow2 = 1
-  --clog2(8) = 3
-  -- while 1 < 8 loop
-  --   pow2 = 1 * 2 = 2
-  --   bit_count = 0 + 1 = 1
-  -- while 2 < 8 loop
-  --   pow2 = 2 * 2 = 4
-  --   bit_count = 1 + 1 = 2
-  -- while 4 < 8 loop
-  --   pow2 = 4 * 2 = 8
-  --   bit_count = 2 + 1 = 3
-  -- while 8 < 8 loop
-  --   (no se cumple, sale del loop)
-  -- return bit_count = 3  
+ 
   function clog2(n : natural) return natural is
     variable bit_count : natural := 0;
     variable pow2      : natural := 1;
@@ -37,13 +23,13 @@ architecture Behavioral of rom_instrucciones_2 is
     end loop;
     return bit_count;
   end function;
-  
+  --Tendré que chekear posibles porblemas en caso de que instrucrion number no sea potencia de 2 
   constant rom_idx_width : natural := clog2(INSTRUCTION_NUMBER);    
-  signal rom_index : natural range 0 to INSTRUCTION_NUMBER - 1;     --Esto hará que si me salgo del rango, el index se vuelva 0 (comportamiento de un contador con overflow)
+  signal rom_index : natural range 0 to INSTRUCTION_NUMBER - 1;    
 begin
   rom_index <= to_integer(unsigned(addr(WORD_ADDR_LSB + rom_idx_width - 1 downto WORD_ADDR_LSB)));
-                                        --El maximo bit para el que tiene sentido (sabiendo que el numero de instrucciones es muy limitado)
+                                       
 
 
-  inst      <= MEMORIA(rom_index);  --Simplemente asigno la salida conforme a la estructura de datos de la ROM de instrucciones.
+  inst      <= MEMORIA(rom_index);  
 end Behavioral;
