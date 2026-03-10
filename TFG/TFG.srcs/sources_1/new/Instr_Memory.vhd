@@ -38,7 +38,7 @@ architecture Behavioral of rom_instrucciones_2 is
     return bit_count;
   end function;
   
-  constant rom_idx_width : natural := clog2(INSTRUCTION_NUMBER);    --Saco el maximo bit que usaré para indexar la ROM, dado el numero de instrucciones que tengo
+  constant rom_idx_width : natural := clog2(INSTRUCTION_NUMBER);    
   signal rom_index : natural range 0 to INSTRUCTION_NUMBER - 1;     --Esto hará que si me salgo del rango, el index se vuelva 0 (comportamiento de un contador con overflow)
 begin
   rom_index <= to_integer(unsigned(addr(WORD_ADDR_LSB + rom_idx_width - 1 downto WORD_ADDR_LSB)));
