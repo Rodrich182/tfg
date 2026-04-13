@@ -1,0 +1,460 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x3F26D205BEC034F9",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../TFG.gen/sources_1/bd/HBD_Proc",
+      "name": "HBD_Proc",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "UC_0": "",
+      "UPG_0": ""
+    },
+    "ports": {
+      "clk_0_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "HBD_Proc_clk_0_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rst_0_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "store_data_dbg_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "pc_o_0_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "alu_res_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "UC_0": {
+        "parameters": {
+          "ACTIVE_SIM_BD": {
+            "value": "UC.bd"
+          },
+          "ACTIVE_SYNTH_BD": {
+            "value": "UC.bd"
+          },
+          "ENABLE_DFX": {
+            "value": "0"
+          },
+          "LIST_SIM_BD": {
+            "value": "UC.bd"
+          },
+          "LIST_SYNTH_BD": {
+            "value": "UC.bd"
+          },
+          "LOCK_PROPAGATE": {
+            "value": "0"
+          },
+          "TRAINING_MODULE": {
+            "value": "UC.bd",
+            "value_src": "auto"
+          }
+        },
+        "ports": {
+          "alu_res_i_0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rst_0": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "zero_i_0": {
+            "direction": "I"
+          },
+          "lt_i_0": {
+            "direction": "I"
+          },
+          "ltu_i_0": {
+            "direction": "I"
+          },
+          "clk_0": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst_0:rst_0_0",
+                "value_src": "strong"
+              },
+              "CLK_DOMAIN": {
+                "value": "HBD_Proc_clk_0_0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "FREQ_TOLERANCE_HZ": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "INSERT_VIP": {
+                "value": "0",
+                "value_src": "strong"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rs2_addr_o_0": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "rd_addr_o_0": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ALUSrc_0": {
+            "direction": "O"
+          },
+          "imm_ext_o_0": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "MemWrite_0": {
+            "direction": "O"
+          },
+          "RegWrite_0": {
+            "direction": "O"
+          },
+          "mem_funct3_o_0": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "resultSrc_0": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "SrcASelect_0": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "ALUControl_0": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "rs1_addr_o_0": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "pc_o_0": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        },
+        "post_compiled_compname": "UC_inst_0",
+        "architecture": "artix7",
+        "variant_info": {
+          "UC.bd": {
+            "scoped_diagram": "UC_inst_0.bd",
+            "design_checksum": "0x281921770AE41377",
+            "ref_name": "UC",
+            "ref_subinst_path": "HBD_Proc_UC_0",
+            "ref_type": "Block Design",
+            "source_type": "all",
+            "active": "all"
+          }
+        }
+      },
+      "UPG_0": {
+        "vlnv": "xilinx.com:module_ref:UPG:1.0",
+        "ip_revision": "1",
+        "xci_name": "HBD_Proc_UPG_0_0",
+        "xci_path": "ip\\HBD_Proc_UPG_0_0\\HBD_Proc_UPG_0_0.xci",
+        "inst_hier_path": "UPG_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UPG",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "HBD_Proc_clk_0_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pc_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rs1_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rd_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "imm_ext_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_funct3_i": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "ALUControl": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "resultSrc": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MemWrite": {
+            "direction": "I"
+          },
+          "ALUSrc": {
+            "direction": "I"
+          },
+          "SrcASelect": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "RegWrite": {
+            "direction": "I"
+          },
+          "alu_res_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "store_data_dbg_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "zero_o": {
+            "direction": "O"
+          },
+          "lt_o": {
+            "direction": "O"
+          },
+          "ltu_o": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "UC_0_ALUControl_0": {
+        "ports": [
+          "UC_0/ALUControl_0",
+          "UPG_0/ALUControl"
+        ]
+      },
+      "UC_0_ALUSrc_0": {
+        "ports": [
+          "UC_0/ALUSrc_0",
+          "UPG_0/ALUSrc"
+        ]
+      },
+      "UC_0_MemWrite_0": {
+        "ports": [
+          "UC_0/MemWrite_0",
+          "UPG_0/MemWrite"
+        ]
+      },
+      "UC_0_RegWrite_0": {
+        "ports": [
+          "UC_0/RegWrite_0",
+          "UPG_0/RegWrite"
+        ]
+      },
+      "UC_0_SrcASelect_0": {
+        "ports": [
+          "UC_0/SrcASelect_0",
+          "UPG_0/SrcASelect"
+        ]
+      },
+      "UC_0_imm_ext_o_0": {
+        "ports": [
+          "UC_0/imm_ext_o_0",
+          "UPG_0/imm_ext_i"
+        ]
+      },
+      "UC_0_mem_funct3_o_0": {
+        "ports": [
+          "UC_0/mem_funct3_o_0",
+          "UPG_0/mem_funct3_i"
+        ]
+      },
+      "UC_0_pc_o_0": {
+        "ports": [
+          "UC_0/pc_o_0",
+          "pc_o_0_0",
+          "UPG_0/pc_i"
+        ]
+      },
+      "UC_0_rd_addr_o_0": {
+        "ports": [
+          "UC_0/rd_addr_o_0",
+          "UPG_0/rd_addr_i"
+        ]
+      },
+      "UC_0_resultSrc_0": {
+        "ports": [
+          "UC_0/resultSrc_0",
+          "UPG_0/resultSrc"
+        ]
+      },
+      "UC_0_rs1_addr_o_0": {
+        "ports": [
+          "UC_0/rs1_addr_o_0",
+          "UPG_0/rs1_addr_i"
+        ]
+      },
+      "UC_0_rs2_addr_o_0": {
+        "ports": [
+          "UC_0/rs2_addr_o_0",
+          "UPG_0/rs2_addr_i"
+        ]
+      },
+      "UPG_0_alu_res_o": {
+        "ports": [
+          "UPG_0/alu_res_o",
+          "alu_res_o_0",
+          "UC_0/alu_res_i_0"
+        ]
+      },
+      "UPG_0_lt_o": {
+        "ports": [
+          "UPG_0/lt_o",
+          "UC_0/lt_i_0"
+        ]
+      },
+      "UPG_0_ltu_o": {
+        "ports": [
+          "UPG_0/ltu_o",
+          "UC_0/ltu_i_0"
+        ]
+      },
+      "UPG_0_store_data_dbg_o": {
+        "ports": [
+          "UPG_0/store_data_dbg_o",
+          "store_data_dbg_o_0"
+        ]
+      },
+      "UPG_0_zero_o": {
+        "ports": [
+          "UPG_0/zero_o",
+          "UC_0/zero_i_0"
+        ]
+      },
+      "clk_0_0_1": {
+        "ports": [
+          "clk_0_0",
+          "UC_0/clk_0",
+          "UPG_0/clk"
+        ]
+      },
+      "rst_0_0_1": {
+        "ports": [
+          "rst_0_0",
+          "UC_0/rst_0",
+          "UPG_0/rst"
+        ]
+      }
+    }
+  }
+}

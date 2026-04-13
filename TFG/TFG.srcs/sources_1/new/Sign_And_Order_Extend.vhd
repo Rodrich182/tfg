@@ -17,10 +17,10 @@ begin
     process (inst, ImmSrc)
     begin
         case ImmSrc is
-            when IMMSRC_I => -- I type
+            when IMMSRC_I =>
                 immediate <= std_logic_vector(resize(signed(inst(I_IMM_END downto I_IMM_INIT)), DATA_WIDTH));
 
-            when IMMSRC_S => -- S type
+            when IMMSRC_S =>
                 immediate <= std_logic_vector(
                     resize(
                         signed(inst(SB1_IMM_END downto SB1_IMM_INIT) & inst(SB2_IMM_END downto SB2_IMM_INIT)),
@@ -28,7 +28,7 @@ begin
                     )
                 );
 
-            when IMMSRC_B => -- B type
+            when IMMSRC_B =>
                 immediate <= std_logic_vector(
                     resize(
                         signed(
@@ -42,7 +42,7 @@ begin
                     )
                 );
 
-            when IMMSRC_J => -- J type
+            when IMMSRC_J =>
                 immediate <= std_logic_vector(
                     resize(
                         signed(
@@ -55,6 +55,9 @@ begin
                         DATA_WIDTH
                     )
                 );
+
+            when IMMSRC_U =>
+                immediate <= inst(DATA_WIDTH - 1 downto 12) & "000000000000";
 
             when others =>
                 immediate <= (others => '0');

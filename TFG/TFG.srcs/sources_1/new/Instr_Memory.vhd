@@ -24,6 +24,7 @@ architecture Behavioral of rom_instrucciones_2 is
     return bit_count;
   end function;
   --Tendré que chekear posibles porblemas en caso de que instrucrion number no sea potencia de 2 
+  --I will have to check possible problems in case instruction number is not a power of 2
   constant rom_idx_width : natural := clog2(INSTRUCTION_NUMBER);    
   signal rom_index : natural range 0 to INSTRUCTION_NUMBER - 1;    
 begin

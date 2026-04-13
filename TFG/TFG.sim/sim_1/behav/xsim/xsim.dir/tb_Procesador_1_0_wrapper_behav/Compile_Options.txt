@@ -1,1 +1,0 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "tb_Procesador_1_0_wrapper_behav" "xil_defaultlib.tb_Procesador_1_0_wrapper" -log "elaborate.log" 

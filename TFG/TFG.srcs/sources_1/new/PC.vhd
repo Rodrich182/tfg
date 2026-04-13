@@ -7,6 +7,7 @@ entity PC is
     Port (
         clk     : in  STD_LOGIC;
         reset   : in  STD_LOGIC;
+        PCEn    : in  STD_LOGIC;
         PCSrc   : in  STD_LOGIC;
         Addrin  : in  STD_LOGIC_VECTOR (DATA_WIDTH - 1 downto 0);
         Addrout : out STD_LOGIC_VECTOR (DATA_WIDTH - 1 downto 0)
@@ -16,15 +17,17 @@ end PC;
 architecture Behavioral of PC is
     signal pc_reg : STD_LOGIC_VECTOR (DATA_WIDTH - 1 downto 0) := (others => '0');
 begin
-    process(clk, reset)
+    process(clk)
     begin
-        if reset = '1' then
-            pc_reg <= (others => '0');
-        elsif rising_edge(clk) then
-            if PCSrc = '1' then
-                pc_reg <= Addrin;
-            else
-                pc_reg <= std_logic_vector(unsigned(pc_reg) + PC_STEP);
+        if rising_edge(clk) then
+            if reset = '1' then
+                pc_reg <= (others => '0');
+            elsif PCEn = '1' then
+                if PCSrc = '1' then
+                    pc_reg <= Addrin;
+                else
+                    pc_reg <= std_logic_vector(unsigned(pc_reg) + to_unsigned(PC_STEP, DATA_WIDTH));
+                end if;
             end if;
         end if;
     end process;

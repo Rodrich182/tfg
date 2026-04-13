@@ -10,17 +10,14 @@ package Program_ROM_Pkg is
     of std_logic_vector(DATA_WIDTH - 1 downto 0);
 
   --------------------------------------------------------------------------
-  -- Programa de test para tu CPU actual (RV32 subset):
+  -- Programa ROM de ejemplo.
   --
-  -- ✅ Soportado ahora:
-  --   R-type: add, sub, and, or, xor, sll, srl, sra, slt, sltu
-  --   I-type: addi, andi, ori, xori, slti, sltiu, slli, srli, srai
-  --   Mem:    sw, lw  (word)
-  --   Branch: beq, bne, blt, bge, bltu, bgeu
+  -- El core ya soporta RV32I base a nivel RTL, con estas notas:
+  --   * fence/fence.i se tratan como NOP
+  --   * ecall/ebreak detienen el PC
   --
-  -- ❌ No soportado aún (comentado):
-  --   U-type: lui, auipc
-  --   Jumps:  jal, jalr
+  -- Esta ROM concreta sigue siendo un smoke test del subconjunto original.
+  -- Puedes regenerarla desde GCC usando los scripts del directorio scripts/.
   --------------------------------------------------------------------------
     --
   constant MEMORIA : rom_type := (
@@ -90,7 +87,8 @@ package Program_ROM_Pkg is
     42 => x"00000013", -- nop_end
 
     ----------------------------------------------------------------------
-    -- ❌ No soportado aún (dejar comentado por ahora)
+    -- Instrucciones RV32I adicionales ya soportadas por el core.
+    -- La ROM de ejemplo no las usa todavía.
     ----------------------------------------------------------------------
     -- 43 => x"12345D37", -- lui   x26, 0x12345
     -- 44 => x"00001DB7", -- auipc x27, 0x00001

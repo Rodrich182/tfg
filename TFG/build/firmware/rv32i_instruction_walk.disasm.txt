@@ -1,0 +1,85 @@
+
+C:\Users\rodrich\Documents\AA uni\reps\tfg\TFG\build\firmware\rv32i_instruction_walk.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	0ff0000f          	fence	iorw,iorw
+   4:	00500293          	addi	x5,x0,5
+   8:	00c00313          	addi	x6,x0,12
+   c:	ffd00393          	addi	x7,x0,-3
+  10:	00100413          	addi	x8,x0,1
+  14:	08000e13          	addi	x28,x0,128
+  18:	123454b7          	lui	x9,0x12345
+  1c:	00000517          	auipc	x10,0x0
+  20:	006285b3          	add	x11,x5,x6
+  24:	40530633          	sub	x12,x6,x5
+  28:	005416b3          	sll	x13,x8,x5
+  2c:	0053a733          	slt	x14,x7,x5
+  30:	0072b7b3          	sltu	x15,x5,x7
+  34:	0062c833          	xor	x16,x5,x6
+  38:	008358b3          	srl	x17,x6,x8
+  3c:	4083d933          	sra	x18,x7,x8
+  40:	0062e9b3          	or	x19,x5,x6
+  44:	0062fa33          	and	x20,x5,x6
+  48:	0003aa93          	slti	x21,x7,0
+  4c:	00a2bb13          	sltiu	x22,x5,10
+  50:	00f2cb93          	xori	x23,x5,15
+  54:	0302ec13          	ori	x24,x5,48
+  58:	00737c93          	andi	x25,x6,7
+  5c:	00341d13          	slli	x26,x8,0x3
+  60:	00135d93          	srli	x27,x6,0x1
+  64:	4013de93          	srai	x29,x7,0x1
+  68:	f8000f13          	addi	x30,x0,-128
+  6c:	01ee0023          	sb	x30,0(x28)
+  70:	000e0f83          	lb	x31,0(x28)
+  74:	000e4f03          	lbu	x30,0(x28)
+  78:	00002f37          	lui	x30,0x2
+  7c:	345f6f13          	ori	x30,x30,837
+  80:	01ee1123          	sh	x30,2(x28)
+  84:	002e1f83          	lh	x31,2(x28)
+  88:	002e5f03          	lhu	x30,2(x28)
+  8c:	12345f37          	lui	x30,0x12345
+  90:	678f6f13          	ori	x30,x30,1656
+  94:	01ee2223          	sw	x30,4(x28)
+  98:	004e2f83          	lw	x31,4(x28)
+  9c:	00700293          	addi	x5,x0,7
+  a0:	00700313          	addi	x6,x0,7
+  a4:	00628463          	beq	x5,x6,ac <beq_ok>
+  a8:	00000013          	addi	x0,x0,0
+
+000000ac <beq_ok>:
+  ac:	00900313          	addi	x6,x0,9
+  b0:	00629463          	bne	x5,x6,b8 <bne_ok>
+  b4:	00000013          	addi	x0,x0,0
+
+000000b8 <bne_ok>:
+  b8:	fff00393          	addi	x7,x0,-1
+  bc:	00100413          	addi	x8,x0,1
+  c0:	0083c463          	blt	x7,x8,c8 <blt_ok>
+  c4:	00000013          	addi	x0,x0,0
+
+000000c8 <blt_ok>:
+  c8:	00745463          	bge	x8,x7,d0 <bge_ok>
+  cc:	00000013          	addi	x0,x0,0
+
+000000d0 <bge_ok>:
+  d0:	00746463          	bltu	x8,x7,d8 <bltu_ok>
+  d4:	00000013          	addi	x0,x0,0
+
+000000d8 <bltu_ok>:
+  d8:	0083f463          	bgeu	x7,x8,e0 <bgeu_ok>
+  dc:	00000013          	addi	x0,x0,0
+
+000000e0 <bgeu_ok>:
+  e0:	010000ef          	jal	x1,f0 <jal_target>
+
+000000e4 <after_jal>:
+  e4:	01fe2423          	sw	x31,8(x28)
+  e8:	00000073          	ecall
+  ec:	00100073          	ebreak
+
+000000f0 <jal_target>:
+  f0:	001f8f93          	addi	x31,x31,1
+  f4:	00008067          	jalr	x0,0(x1)

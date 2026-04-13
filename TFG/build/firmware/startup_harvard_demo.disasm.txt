@@ -1,0 +1,67 @@
+
+C:\Users\rodrich\Documents\AA uni\reps\tfg\TFG\build\firmware\startup_harvard_demo.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	00001117          	auipc	x2,0x1
+   4:	00010113          	addi	x2,x2,0 # 1000 <__stack_top>
+   8:	00000297          	auipc	x5,0x0
+   c:	0b828293          	addi	x5,x5,184 # c0 <__data_load>
+  10:	00000317          	auipc	x6,0x0
+  14:	ff030313          	addi	x6,x6,-16 # 0 <_start>
+  18:	00000397          	auipc	x7,0x0
+  1c:	fe838393          	addi	x7,x7,-24 # 0 <_start>
+
+00000020 <copy_data_loop>:
+  20:	00737c63          	bgeu	x6,x7,38 <zero_bss>
+  24:	0002ae03          	lw	x28,0(x5)
+  28:	01c32023          	sw	x28,0(x6)
+  2c:	00428293          	addi	x5,x5,4
+  30:	00430313          	addi	x6,x6,4
+  34:	fe0006e3          	beq	x0,x0,20 <copy_data_loop>
+
+00000038 <zero_bss>:
+  38:	00000317          	auipc	x6,0x0
+  3c:	fc830313          	addi	x6,x6,-56 # 0 <_start>
+  40:	00000397          	auipc	x7,0x0
+  44:	fd438393          	addi	x7,x7,-44 # 14 <__bss_end>
+
+00000048 <zero_bss_loop>:
+  48:	00737863          	bgeu	x6,x7,58 <call_main>
+  4c:	00032023          	sw	x0,0(x6)
+  50:	00430313          	addi	x6,x6,4
+  54:	fe000ae3          	beq	x0,x0,48 <zero_bss_loop>
+
+00000058 <call_main>:
+  58:	008000ef          	jal	x1,60 <main>
+
+0000005c <halt_forever>:
+  5c:	00000063          	beq	x0,x0,5c <halt_forever>
+
+00000060 <main>:
+  60:	000007b7          	lui	x15,0x0
+  64:	00078793          	addi	x15,x15,0 # 0 <_start>
+  68:	0007a603          	lw	x12,0(x15)
+  6c:	0047a683          	lw	x13,4(x15)
+  70:	ff010113          	addi	x2,x2,-16
+  74:	00860593          	addi	x11,x12,8
+  78:	00b12223          	sw	x11,4(x2)
+  7c:	00268593          	addi	x11,x13,2
+  80:	00b12423          	sw	x11,8(x2)
+  84:	00412583          	lw	x11,4(x2)
+  88:	00812503          	lw	x10,8(x2)
+  8c:	00460613          	addi	x12,x12,4
+  90:	00c7a023          	sw	x12,0(x15)
+  94:	00a58633          	add	x12,x11,x10
+  98:	00c12623          	sw	x12,12(x2)
+  9c:	00c12603          	lw	x12,12(x2)
+  a0:	00c7a703          	lw	x14,12(x15)
+  a4:	00168693          	addi	x13,x13,1
+  a8:	00d7a223          	sw	x13,4(x15)
+  ac:	00e60733          	add	x14,x12,x14
+  b0:	00c7a823          	sw	x12,16(x15)
+  b4:	00e7a423          	sw	x14,8(x15)
+  b8:	10e02023          	sw	x14,256(x0) # 100 <__data_load+0x40>
+  bc:	0000006f          	jal	x0,bc <main+0x5c>
