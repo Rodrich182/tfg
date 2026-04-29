@@ -1,0 +1,675 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2DB4E7BCBC440E2F",
+      "device": "xc7a100tcsg324-1",
+      "gen_directory": "../../../../ProcesadorRISCV-32i_1_0_0.gen/sources_1/bd/UPG_2_0_0",
+      "name": "UPG_2_0_0",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2025.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Data_memory_bd_0": "",
+      "UPG_Memory_Interface_0": "",
+      "MMIO_Address_Decoder_0": "",
+      "GPIO_Peripheral_0": ""
+    },
+    "ports": {
+      "MemWrite_0": {
+        "direction": "I"
+      },
+      "ALUSrc_0": {
+        "direction": "I"
+      },
+      "SrcASelect_0": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "pc_i_0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "rs1_addr_i_0": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "RegWrite_0": {
+        "direction": "I"
+      },
+      "imm_ext_i_0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "mem_funct3_i_0": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "rs2_addr_i_0": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "rd_addr_i_0": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "UPG_2_0_0_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "ALUControl_0": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      },
+      "resultSrc_0": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "lt_o_0": {
+        "direction": "O"
+      },
+      "ltu_o_0": {
+        "direction": "O"
+      },
+      "zero_o_0": {
+        "direction": "O"
+      },
+      "alu_res_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "btn_sel_o_0": {
+        "direction": "O"
+      },
+      "ram_sel_o_0": {
+        "direction": "O"
+      },
+      "store_data_dbg_o_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "led_sel_o_0": {
+        "direction": "O"
+      },
+      "led_o_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "btn_i_0": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Data_memory_bd_0": {
+        "vlnv": "xilinx.com:module_ref:Data_memory_bd:1.0",
+        "ip_revision": "1",
+        "xci_name": "UPG_2_0_0_Data_memory_bd_0_0",
+        "xci_path": "ip\\UPG_2_0_0_Data_memory_bd_0_0\\UPG_2_0_0_Data_memory_bd_0_0.xci",
+        "inst_hier_path": "Data_memory_bd_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Data_memory_bd",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "UPG_2_0_0_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "we": {
+            "direction": "I"
+          },
+          "funct3": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "Result": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "UPG_Memory_Interface_0": {
+        "vlnv": "xilinx.com:module_ref:UPG_Memory_Interface:1.0",
+        "ip_revision": "1",
+        "xci_name": "UPG_2_0_0_UPG_Memory_Interface_0_0",
+        "xci_path": "ip\\UPG_2_0_0_UPG_Memory_Interface_0_0\\UPG_2_0_0_UPG_Memory_Interface_0_0.xci",
+        "inst_hier_path": "UPG_Memory_Interface_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "UPG_Memory_Interface",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "UPG_2_0_0_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pc_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "rs1_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rs2_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "rd_addr_i": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "imm_ext_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_funct3_i": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "ALUControl": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "resultSrc": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "MemWrite": {
+            "direction": "I"
+          },
+          "ALUSrc": {
+            "direction": "I"
+          },
+          "SrcASelect": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "RegWrite": {
+            "direction": "I"
+          },
+          "mem_rdata_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_addr_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_wdata_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_write_o": {
+            "direction": "O"
+          },
+          "mem_funct3_o": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "alu_res_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "store_data_dbg_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "zero_o": {
+            "direction": "O"
+          },
+          "lt_o": {
+            "direction": "O"
+          },
+          "ltu_o": {
+            "direction": "O"
+          }
+        }
+      },
+      "MMIO_Address_Decoder_0": {
+        "vlnv": "xilinx.com:module_ref:MMIO_Address_Decoder:1.0",
+        "ip_revision": "1",
+        "xci_name": "UPG_2_0_0_MMIO_Address_Decoder_0_0",
+        "xci_path": "ip\\UPG_2_0_0_MMIO_Address_Decoder_0_0\\UPG_2_0_0_MMIO_Address_Decoder_0_0.xci",
+        "inst_hier_path": "MMIO_Address_Decoder_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MMIO_Address_Decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "addr_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "memwrite_i": {
+            "direction": "I"
+          },
+          "ram_rdata_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "led_rdata_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "btn_rdata_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ram_we_o": {
+            "direction": "O"
+          },
+          "led_we_o": {
+            "direction": "O"
+          },
+          "ram_sel_o": {
+            "direction": "O"
+          },
+          "led_sel_o": {
+            "direction": "O"
+          },
+          "btn_sel_o": {
+            "direction": "O"
+          },
+          "rdata_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "GPIO_Peripheral_0": {
+        "vlnv": "xilinx.com:module_ref:GPIO_Peripheral:1.0",
+        "ip_revision": "1",
+        "xci_name": "UPG_2_0_0_GPIO_Peripheral_0_0",
+        "xci_path": "ip\\UPG_2_0_0_GPIO_Peripheral_0_0\\UPG_2_0_0_GPIO_Peripheral_0_0.xci",
+        "inst_hier_path": "GPIO_Peripheral_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "GPIO_Peripheral",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_i": {
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "default_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "default_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "UPG_2_0_0_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst_i": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "led_we_i": {
+            "direction": "I"
+          },
+          "wdata_i": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "btn_i": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "led_o": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "led_rdata_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "btn_rdata_o": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "ALUControl_0_1": {
+        "ports": [
+          "ALUControl_0",
+          "UPG_Memory_Interface_0/ALUControl"
+        ]
+      },
+      "ALUSrc_0_1": {
+        "ports": [
+          "ALUSrc_0",
+          "UPG_Memory_Interface_0/ALUSrc"
+        ]
+      },
+      "Data_memory_bd_0_Result": {
+        "ports": [
+          "Data_memory_bd_0/Result",
+          "MMIO_Address_Decoder_0/ram_rdata_i"
+        ]
+      },
+      "GPIO_Peripheral_0_btn_rdata_o": {
+        "ports": [
+          "GPIO_Peripheral_0/btn_rdata_o",
+          "MMIO_Address_Decoder_0/btn_rdata_i"
+        ]
+      },
+      "GPIO_Peripheral_0_led_o": {
+        "ports": [
+          "GPIO_Peripheral_0/led_o",
+          "led_o_0"
+        ]
+      },
+      "GPIO_Peripheral_0_led_rdata_o": {
+        "ports": [
+          "GPIO_Peripheral_0/led_rdata_o",
+          "MMIO_Address_Decoder_0/led_rdata_i"
+        ]
+      },
+      "MMIO_Address_Decoder_0_btn_sel_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/btn_sel_o",
+          "btn_sel_o_0"
+        ]
+      },
+      "MMIO_Address_Decoder_0_led_sel_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/led_sel_o",
+          "led_sel_o_0"
+        ]
+      },
+      "MMIO_Address_Decoder_0_led_we_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/led_we_o",
+          "GPIO_Peripheral_0/led_we_i"
+        ]
+      },
+      "MMIO_Address_Decoder_0_ram_sel_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/ram_sel_o",
+          "ram_sel_o_0"
+        ]
+      },
+      "MMIO_Address_Decoder_0_ram_we_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/ram_we_o",
+          "Data_memory_bd_0/we"
+        ]
+      },
+      "MMIO_Address_Decoder_0_rdata_o": {
+        "ports": [
+          "MMIO_Address_Decoder_0/rdata_o",
+          "UPG_Memory_Interface_0/mem_rdata_i"
+        ]
+      },
+      "MemWrite_0_1": {
+        "ports": [
+          "MemWrite_0",
+          "UPG_Memory_Interface_0/MemWrite"
+        ]
+      },
+      "RegWrite_0_1": {
+        "ports": [
+          "RegWrite_0",
+          "UPG_Memory_Interface_0/RegWrite"
+        ]
+      },
+      "SrcASelect_0_1": {
+        "ports": [
+          "SrcASelect_0",
+          "UPG_Memory_Interface_0/SrcASelect"
+        ]
+      },
+      "UPG_Memory_Interface_0_alu_res_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/alu_res_o",
+          "alu_res_o_0"
+        ]
+      },
+      "UPG_Memory_Interface_0_lt_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/lt_o",
+          "lt_o_0"
+        ]
+      },
+      "UPG_Memory_Interface_0_ltu_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/ltu_o",
+          "ltu_o_0"
+        ]
+      },
+      "UPG_Memory_Interface_0_mem_addr_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/mem_addr_o",
+          "MMIO_Address_Decoder_0/addr_i",
+          "Data_memory_bd_0/addr"
+        ]
+      },
+      "UPG_Memory_Interface_0_mem_funct3_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/mem_funct3_o",
+          "Data_memory_bd_0/funct3"
+        ]
+      },
+      "UPG_Memory_Interface_0_mem_wdata_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/mem_wdata_o",
+          "Data_memory_bd_0/data_in",
+          "GPIO_Peripheral_0/wdata_i"
+        ]
+      },
+      "UPG_Memory_Interface_0_mem_write_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/mem_write_o",
+          "MMIO_Address_Decoder_0/memwrite_i"
+        ]
+      },
+      "UPG_Memory_Interface_0_store_data_dbg_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/store_data_dbg_o",
+          "store_data_dbg_o_0"
+        ]
+      },
+      "UPG_Memory_Interface_0_zero_o": {
+        "ports": [
+          "UPG_Memory_Interface_0/zero_o",
+          "zero_o_0"
+        ]
+      },
+      "btn_i_0_1": {
+        "ports": [
+          "btn_i_0",
+          "GPIO_Peripheral_0/btn_i"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "UPG_Memory_Interface_0/clk",
+          "GPIO_Peripheral_0/clk_i",
+          "Data_memory_bd_0/clk"
+        ]
+      },
+      "imm_ext_i_0_1": {
+        "ports": [
+          "imm_ext_i_0",
+          "UPG_Memory_Interface_0/imm_ext_i"
+        ]
+      },
+      "mem_funct3_i_0_1": {
+        "ports": [
+          "mem_funct3_i_0",
+          "UPG_Memory_Interface_0/mem_funct3_i"
+        ]
+      },
+      "pc_i_0_1": {
+        "ports": [
+          "pc_i_0",
+          "UPG_Memory_Interface_0/pc_i"
+        ]
+      },
+      "rd_addr_i_0_1": {
+        "ports": [
+          "rd_addr_i_0",
+          "UPG_Memory_Interface_0/rd_addr_i"
+        ]
+      },
+      "resultSrc_0_1": {
+        "ports": [
+          "resultSrc_0",
+          "UPG_Memory_Interface_0/resultSrc"
+        ]
+      },
+      "rs1_addr_i_0_1": {
+        "ports": [
+          "rs1_addr_i_0",
+          "UPG_Memory_Interface_0/rs1_addr_i"
+        ]
+      },
+      "rs2_addr_i_0_1": {
+        "ports": [
+          "rs2_addr_i_0",
+          "UPG_Memory_Interface_0/rs2_addr_i"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "UPG_Memory_Interface_0/rst",
+          "GPIO_Peripheral_0/rst_i"
+        ]
+      }
+    }
+  }
+}
