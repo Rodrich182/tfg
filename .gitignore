@@ -1,0 +1,51 @@
+# Old/local projects not intended for the public repository.
+TFG/
+Proc_FPGA_top2/
+
+# Local notes, presentations, and downloaded board repositories.
+Diapositivas Sistemas Digtales 2025/
+Guion1/
+vivado-boards-master/
+guia_top2_fpga.tex
+
+# Vivado generated output.
+.Xil/
+**/.Xil/
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+*.pb
+*.wdb
+*.wcfg
+dfx_runtime.txt
+xsim.dir/
+**/xsim.dir/
+
+# Vivado generated project folders.
+**/*.cache/
+**/*.gen/
+**/*.hw/
+**/*.ip_user_files/
+**/*.runs/
+**/*.sim/
+
+# Firmware build products.
+**/build/
+*.elf
+*.bin
+*.map
+*.disasm.txt
+*.sections.txt
+*.mif
+
+# Keep the definitive Vivado project sources visible.
+!ProcesadorRISCV-32i_1_0_0/
+!ProcesadorRISCV-32i_1_0_0/ProcesadorRISCV-32i_1_0_0.xpr
+!ProcesadorRISCV-32i_1_0_0/ProcesadorRISCV-32i_1_0_0.srcs/
+!ProcesadorRISCV-32i_1_0_0/ProcesadorRISCV-32i_1_0_0.srcs/**
+!ProcesadorRISCV-32i_1_0_0/firmware/
+!ProcesadorRISCV-32i_1_0_0/firmware/programs/
+!ProcesadorRISCV-32i_1_0_0/firmware/programs/**
+!ProcesadorRISCV-32i_1_0_0/firmware/scripts/
+!ProcesadorRISCV-32i_1_0_0/firmware/scripts/**
